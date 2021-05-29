@@ -41,6 +41,11 @@ function buttonPressSimulate(self)
     {
         
         myScoreNumber += Number(simulateHit(cardPlacementPlayer));
+        if(myScoreNumber > 21)
+        {
+            bustHandler(myScore);
+            return;
+        }// end of if 
         
         myScore.innerHTML = "YOU: "+String(myScoreNumber);
 
@@ -52,7 +57,7 @@ function buttonPressSimulate(self)
     }else if(self.id === 'deal')
     {
         simulateDeal();
-    }
+    }// end of fi 
 }// end of fucntion
 
 
@@ -75,12 +80,15 @@ function simulateStand()
 {
     botScoreNumber += Number(simulateHit(document.getElementById('botCardsPlacement')));
     
-    document.getElementById('botScore').innerText = "BOT: "+String(botScoreNumber);
+    
     if(botScoreNumber >= 21 || botScoreNumber > myScoreNumber)
     {
         stoptimer();
+        bustHandler(document.getElementById('botScore'));
+        return;
         
     }
+    document.getElementById('botScore').innerText = "BOT: "+String(botScoreNumber);
 
 }// end of function
 
@@ -88,13 +96,52 @@ function stoptimer()
 {
     window.clearInterval(id);
 
-}
+}// end of function
+
+function bustHandler(score)
+{
+    score.innerHTML = "BUST!";
+    // score.style.boxShadow = '5px 10px 50px rgba(255 , 0 , 0 , 1)';
+    score.style.padding = '0px';
+    score.style.color = 'red';
+}// end of function
+
+
+function winnerDecider()
+{
+    // will decide later
+
+}// end of function
+
+
+
+
 
 
 function simulateDeal()
 {
+    let playerCards =cardPlacementPlayer.children;
+    let botCards = document.getElementById('botCardsPlacement').children
+
+    // let allCardPlayed = cardPlacementPlayer.children.concat(document.getElementById('botCardsPlacement').children);
+    // console.log(botCards);
+    remChild(playerCards , cardPlacementPlayer);
+    remChild(botCards ,document.getElementById('botCardsPlacement') );
 
 }// end of function
+
+function remChild(array1, parent)
+{
+    for(let i = 0; i < array1.length;i++)
+    {
+        if(array1[i].tagName != 'P');
+        // if(array1[i].tagName != 'p')
+        {
+            parent.removeChild(array1[i]);
+        }
+    }// end of for loop 
+
+}
 
 function randomCardSelect()
 {
@@ -106,6 +153,7 @@ function setImageAndDiv()
 {
     let cardDiv = document.createElement('div');
     let cardImage = document.createElement('img');
+    
     // cardDiv.setAttribute('id' , 'tempCardBox');
     cardDiv.style.padding = '5px';
     cardDiv.style.width = '30%';

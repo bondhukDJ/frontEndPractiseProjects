@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>blackJack</h1>
+        
+        <hr>
+        
+        <h2>lets play</h2>
+
+        <div class="blackJackBoard">
+
+            <div class="cardPlacementBox">
+
+                <div class="cardsPlacement" id = "myCardsPlacement">
+
+                    <p id = "myScore">
+                        YOU: 0
+                    </p>
+                    <!-- <div style="width: 30%; padding: 5px;">
+                        <img src="./images/10.png" alt="" style="width: 100%;" >
+                    </div>
+                    <div style="width: 30%; padding: 5px;">
+                        <img src="./images/10.png" alt="" style="width: 100%;" >
+                    </div>
+                    <div style="width: 30%; padding: 5px;">
+                        <img src="./images/10.png" alt="" style="width: 100%;" >
+                    </div>
+                    <div style="width: 30%; padding: 5px;">
+                        <img src="./images/10.png" alt="" style="width: 100%;" >
+                    </div>
+                    <div style="width: 30%; padding: 5px;">
+                        <img src="./images/10.png" alt="" style="width: 100%;" >
+                    </div> -->
+                    
+                    
+                </div>
+                <div class="cardsPlacement" id = "botCardsPlacement">
+                    
+                    <p id = "botScore">
+                        BOT: 0
+                    </p>
+                
+                </div>
+
+            </div>
+            
+
+            <div class="buttonBox">
+                <div>
+                    <button id = "hit" >HIT</button>
+                    <button id = "stand">STAND</button>
+                    <button id = "deal">DEAL</button>
+                </div>
+                
+
+            </div>
+
+        </div>
+
+        <div class="resultBox">
+            <table>
+                
+                <tr>
+                    <th>wins</th>
+                    <th>losses</th>
+                    <th>draws</th>
+                </tr>
+                <tr>
+                    <td id = "wins">0</td>
+                    <td id = "losses">0</td>
+                    <td id = "draws">0</td>
+                </tr>
+            </table>
+
+        </div>
+
+
+    </div>
+
+
+    <script src="./home.js">
+
+    </script>
+</body>
+</html>

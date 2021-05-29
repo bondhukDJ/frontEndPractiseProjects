@@ -1,13 +1,17 @@
 // front end ta koira legit moira jaitesi 
 
-var cardDiv = document.createElement('div');
-var cardImage = document.createElement('img');
-cardDiv.setAttribute('id' , 'tempCardBox');
-cardDiv.style.padding = '5px';
-cardDiv.style.width = '30%';
-cardImage.style.width = '100%';
-cardDiv.appendChild(cardImage);
+// var cardDiv = document.createElement('div');
+// var cardImage = document.createElement('img');
+// cardDiv.setAttribute('id' , 'tempCardBox');
+// cardDiv.style.padding = '5px';
+// cardDiv.style.width = '30%';
+// cardImage.style.width = '100%';
+// cardDiv.appendChild(cardImage);
 var cardPlacementPlayer = document.getElementById('myCardsPlacement');
+var myScore = document.getElementById('myScore');
+var myScoreNumber = 0;
+var botScoreNumber = 0;
+var id = 0;
 
 var cardValue = {
     "1":"./images/A.png",  
@@ -35,11 +39,16 @@ function buttonPressSimulate(self)
 {
     if(self.id === 'hit')
     {
-        simulateHit();
+        
+        myScoreNumber += Number(simulateHit(cardPlacementPlayer));
+        
+        myScore.innerHTML = "YOU: "+String(myScoreNumber);
+
+
 
     }else if(self.id === 'stand')
     {
-        simulateStand();
+        startTimer();
     }else if(self.id === 'deal')
     {
         simulateDeal();
@@ -47,16 +56,40 @@ function buttonPressSimulate(self)
 }// end of fucntion
 
 
-function simulateHit()
+function simulateHit(cardPlacementPlayer)
 {
-    cardImage.src = cardValue[randomCardSelect()];
-    cardPlacementPlayer.appendChild(cardDiv);
+    let mixImgDiv = setImageAndDiv();
+    let numberStr = randomCardSelect();
+    mixImgDiv[1].src = cardValue[numberStr];
+    cardPlacementPlayer.appendChild(mixImgDiv[0]);
+    return numberStr;
 }// end of function
+function startTimer()
+{
+    id = window.setInterval(simulateStand , 1000);
+
+}// end of function
+
 
 function simulateStand()
 {
+    botScoreNumber += Number(simulateHit(document.getElementById('botCardsPlacement')));
+    
+    document.getElementById('botScore').innerText = "BOT: "+String(botScoreNumber);
+    if(botScoreNumber >= 21 || botScoreNumber > myScoreNumber)
+    {
+        stoptimer();
+        
+    }
 
 }// end of function
+
+function stoptimer()
+{
+    window.clearInterval(id);
+
+}
+
 
 function simulateDeal()
 {
@@ -69,3 +102,19 @@ function randomCardSelect()
 
 }
 
+function setImageAndDiv()
+{
+    let cardDiv = document.createElement('div');
+    let cardImage = document.createElement('img');
+    // cardDiv.setAttribute('id' , 'tempCardBox');
+    cardDiv.style.padding = '5px';
+    cardDiv.style.width = '30%';
+    cardImage.style.width = '100%';
+    cardDiv.appendChild(cardImage);
+    return [cardDiv , cardImage];
+}
+
+
+
+//https://www.youtube.com/watch?v=MSf0Ip0hqRE&list=PLgH5QX0i9K3qzryglMjcyEktz4q7ySunX&index=31
+//https://www.youtube.com/watch?v=Qqx_wzMmFeA&t=15671s

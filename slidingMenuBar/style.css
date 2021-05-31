@@ -1,0 +1,57 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Ariel' , sans-serif;
+	
+	
+	
+}
+
+body
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+
+
+
+.container
+{
+	
+	width: 60%;
+	height: 50vh;
+	border: 1px solid black;
+	position: relative;
+	
+	
+}
+#sideBarMenu
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: grey;
+	
+	
+	
+	
+}
+
+.experiment
+{
+	width: 30%;
+	height: 100%;
+	background: lightgrey;
+	border: 1px solid black;
+	margin: auto;
+	position: absolute;
+	left: -30%;
+	/*transform: translateX(30px);*/
+	opacity: 0.3;
+	
+}

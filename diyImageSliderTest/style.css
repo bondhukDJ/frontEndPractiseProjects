@@ -1,0 +1,51 @@
+*
+{
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'ariel' , sans-serif;
+
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.outline
+{
+    width: 50%;
+    border: 2px solid black;
+    position: relative;
+    height: 20px;
+    
+
+}
+.progressBar
+{
+    background-color: rgb(158, 206, 87);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+
+}
+.nozzle
+{
+    /* border-radius: 50%; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    background-color: lightgray;
+    opacity: 0.4;
+    opacity: 1;
+    height: 100%;
+    border:1px solid black;
+    padding: 10px;
+
+}

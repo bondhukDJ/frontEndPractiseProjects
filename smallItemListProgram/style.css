@@ -1,0 +1,22 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ariel' , sans-serif;
+}
+
+
+.popUp
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #999;
+    opacity: 0.1;
+    /* border-radius: 1px; */
+
+}

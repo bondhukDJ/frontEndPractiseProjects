@@ -137,7 +137,7 @@ function remChild(array1, parent)
         if(array1[i].tagName != 'P');
         // if(array1[i].tagName != 'p')
         {
-            parent.removeChild(array1[i]);
+            // parent.removeChild(array1[i]);
         }
     }// end of for loop 
 

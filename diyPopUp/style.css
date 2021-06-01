@@ -1,0 +1,168 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ariel' , sans-serif;
+}
+
+
+/* .popUp
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #999;
+    opacity: 0.1;
+    /* border-radius: 1px; 
+
+} */
+
+
+.container
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: black;
+
+}
+.popUP
+{
+    position: absolute;
+    top: 50%;
+    left: 38%;
+    /* transform: translate(-50% , -50%); */
+    width: 300px;
+    height: 200px;
+    border: 1px solid white;
+    border-bottom: none;
+    animation: popIn 1s ease both , swing 2s 1s forwards;
+    transform-origin: -8% 20%;
+}
+
+/* all the animations */
+
+@keyframes popIn
+{
+    0%
+    {
+        top:-300px;
+        opacity: 0;
+    }
+    70%
+    {
+        top: 30%;
+    }
+    100%
+    {
+        top: 25%; 
+        opacity: 1;
+    }
+}
+
+@keyframes swing
+{
+    0%
+    {
+        /* top: 50%;  */
+        transform: rotateZ(0deg);
+    }
+    40%
+    {
+        /* top: 50%;  */
+        transform: rotateZ(90deg);
+
+    }
+    70%
+    {
+        /* top: 50%;  */
+        transform: rotateZ(70deg);
+    }
+    100%
+    {
+        /* top: 50%;  */
+        transform: rotateZ(75deg);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.popUP img
+{
+    position: absolute;
+    top: -8%;
+    left: 50%;
+    /* width: 100%; */
+    transform: translateX(-50%);
+}
+.popUpInfo
+{
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    background:#f0e4d4;
+    position: absolute;
+    top: 18%;
+    z-index: 2;
+    bottom: 0px;
+    /* min-width: 50%; */
+    left: -10%;
+    right: -10%;
+    padding: 10px 10px 0 10px;
+    
+    
+}
+#cross
+{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+.popUpInfo div
+{
+    width: 100%;
+
+}
+.popUpInfo div input 
+{
+    margin: 0px;
+    /* background: cyan; */
+    width: 65%;
+} 
+.popUpInfo div button
+{
+    margin: 0px;
+    width: 30%;
+}
+
+
+span
+{
+    font-size: 20px;
+}
+p
+{
+    text-align: center;
+}
+
+
+
+

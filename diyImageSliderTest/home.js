@@ -22,8 +22,8 @@ var travelled = 0;
 var flag = true;
 
 
-nozzle.addEventListener('mousedown' , repeatFrame);
-nozzle.addEventListener('mouseup' , stopTimer);
+// nozzle.addEventListener('mousedown' , repeatFrame);
+// nozzle.addEventListener('mouseup' , stopTimer);
 
 
 
@@ -89,3 +89,5 @@ function moveNozzle()
     }//  end of if
 
 }// end of function
+
+

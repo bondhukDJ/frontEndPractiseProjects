@@ -5,12 +5,14 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'ariel' , sans-serif;
+    overflow: hidden;
 
 }
 body
 {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     height: 100vh;
 
@@ -49,3 +51,54 @@ body
     padding: 10px;
 
 }
+
+
+
+/*image container stuff*/
+.imageContainer
+{
+    width: 80%;
+    height: 400px;
+    border: 1px solid black;
+    /*display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;*/
+    position: relative;
+}
+.imageBox
+{
+    border: 1px solid black;
+    width:  50%;
+    height: 100%;
+    position: absolute;
+    
+    
+}
+#image2
+{
+    transform: scaleX(-1);
+    /*top:0%;
+    right: 0%;*/
+    
+}
+
+#image1
+{
+    /*top: 0%;
+    left:0%;*/
+    
+}
+.sliderImage1
+{
+    top:0%;
+    left: 0%;
+}
+.sliderImage2
+{
+    top:0%;
+    right: 0%;
+    
+}
+
+

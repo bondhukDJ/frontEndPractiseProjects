@@ -1,0 +1,49 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'ariel' , sans-serif;
+    color: white;
+}
+
+.container
+{
+    height: 90vh;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    
+}
+.panel
+{
+    height: 100%;
+    width: 7%;
+    border-radius: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: width 0.7s ease-in;
+    position: relative;
+    margin: 0 5px;
+}
+.panel.active
+{
+    width: 72%;
+
+}
+.panel h3
+{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+.panel.active h3
+{
+    opacity: 1;
+}
+
